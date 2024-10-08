@@ -19,7 +19,7 @@ X = drug_df.drop("Drug", axis=1).values
 y = drug_df.Drug.values
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=125
+    X, y, test_size=0.2, random_state=101
 )
 
 
@@ -67,5 +67,5 @@ plt.savefig("./Results/model_results.png", dpi=120)
 with open("./Results/metrics.txt", "w") as outfile:
     outfile.write(f"\nAccuracy = {round(accuracy, 2)}, F1 Score = {round(f1, 2)}")
 
-## Saving the model file
+## Saving the model skops file
 sio.dump(pipe, "./Model/drug_pipeline.skops")
